@@ -138,20 +138,33 @@
       background: #838383;
       font-size: 20px;
       text-align: center;
+      height: 50px;
     }
     .number {
       text-align: center;
     }
     #content_table {
+      position: absolute;
+      width: 100%;
       font-size: 26px;
+      left: 0;
+      right: 0;
 
     }
-        #content_table_next {
+    #content_table_next {
+      position: absolute;
+      width: 100%;
       font-size: 26px;
+      left: 0;
+      right: 0;
 
     }
-        #content_table_back {
+    #content_table_back {
+      position: absolute;
+      width: 100%;
       font-size: 26px;
+      left: 0;
+      right: 0;
 
     }
     #resset {
@@ -161,6 +174,11 @@
       font-size: 20px;
       left: 42.9%;
       right: 42.9%;
+    }
+    #centent_main {
+      position: absolute;
+      left: 0;
+      right: 0;
     }
   </style>
   <script>
@@ -188,8 +206,8 @@
     </script>
   <body style="font-size: 25px">
     <p style="text-align: center; font-size: 50px">Lịch trực phòng 506</p>
-    <div id="content_main">
-<div> <!--Tuần đã qua-->
+    <div id="">
+  <div> <!--Tuần đã qua-->
         <table border="1" id="content_table_back" hidden >
           <tr class="thu">
             <td style="font-size: 20px"></td>
@@ -221,8 +239,8 @@
             <td id="d6"></td>
             <td id="d7"></td>
         </table>
-</div>
-<div> <!--Tuần hiện tại-->
+  </div>
+  <div> <!--Tuần hiện tại-->
         <table border="1" id="content_table" >
           <tr class="thu">
             <td style="font-size: 20px">06/10/2025 - 12/10/2025</td>
@@ -254,8 +272,8 @@
             <td id="d6">Trung</td>
             <td id="d7">Kiên</td>
         </table>
-</div> 
-<div> <!--Tuần tiếp theo-->
+  </div> 
+  <div> <!--Tuần tiếp theo-->
         <table border="1" id="content_table_next"  hidden>
           <tr class="thu">
             <td style="font-size: 20px">12/10/2025 - 19/10/2025</td>
@@ -287,8 +305,8 @@
           <td id="d6">Lâm</td>
           <td id="d7">Quang tí</td>
         </table>
-</div>
-<div style="position: absolute; left: 0; right: 0; top: 32%;"> <!--Nút bấm-->
+  </div>
+  <div style="position: absolute; left: 0; right: 0; top: 32%;"> <!--Nút bấm-->
         <div>
           <button id="back" onclick="back()">⬅️ Tuần trước</button>
           <button id="next" onclick="next()">Tuần sau ➡️</button>
@@ -319,7 +337,7 @@
           </ul>
         </div>
       </div>
-</div>
+  </div>
       <p class="sp">
         <i>Tất cả mọi thắc mắc hoặc có ý kiến hỏi 👉:</i>
         <a href="https://zalo.me/0373329016"
