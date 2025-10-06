@@ -7,7 +7,7 @@
   </head>
   <style>
     body {
-      width: 666px;
+      width: 700px;
       height: 1000px;
       font-size: 20px;
       position: relative;
@@ -18,6 +18,9 @@
       height: 30px;
       position: absolute;
       bottom: 0;
+      left: 0;
+      right: 0;
+      box-sizing: border-box;
     }
     #zaloanhvan {
       width: 150px;
@@ -131,73 +134,203 @@
       font-size: 20px;
       right: 0;
     }
+    .thu {
+      background: #838383;
+      font-size: 20px;
+      text-align: center;
+    }
+    .number {
+      text-align: center;
+    }
+    #content_table {
+      font-size: 26px;
+
+    }
+        #content_table_next {
+      font-size: 26px;
+
+    }
+        #content_table_back {
+      font-size: 26px;
+
+    }
+    #resset {
+      position: absolute;
+      width: 100px;
+      height: 50px;
+      font-size: 20px;
+      left: 42.9%;
+      right: 42.9%;
+    }
   </style>
+  <script>
+    function next() {
+      // Ẩn nút 1
+      document.getElementById("content_table").hidden = true;
+       document.getElementById("content_table_back").hidden = true;
+      // Hiện nút 2
+      document.getElementById("content_table_next").hidden = false;
+    }
+    function back() {
+      // Ẩn nút 1
+      document.getElementById("content_table").hidden = true;
+      document.getElementById("content_table_next").hidden = true;     
+      // Hiện nút 2
+      document.getElementById("content_table_back").hidden = false;
+    }
+    function resset() {
+      // Ẩn nút 1
+      document.getElementById("content_table_back").hidden = true;
+      document.getElementById("content_table_next").hidden = true;     
+      // Hiện nút 2
+      document.getElementById("content_table").hidden = false;
+    }
+    </script>
   <body style="font-size: 25px">
     <p style="text-align: center; font-size: 50px">Lịch trực phòng 506</p>
-    <div class="tabletruc">
-      <table border="1" style="font-size: 26px">
-        <tr style="text-align: center; background-color: rgb(190, 190, 190)">
-          <td style="font-size: 20px">06/10/2025 - 12/10/2025</td>
-          <td>Thứ 2</td>
-          <td>Thứ 3</td>
-          <td>Thứ 4</td>
-          <td>Thứ 5</td>
-          <td>Thứ 6</td>
-          <td>Thứ 7</td>
-          <td>Chủ nhật</td>
-        </tr>
-        <tr style="text-align: center">
-          <td rowspan="2" style="background-color: rgb(190, 190, 190)">Tên</td>
-          <td id="t1">Trung</td>
-          <td id="t2">Kiên</td>
-          <td id="t3">Văn</td>
-          <td id="t4">Quang to</td>
-          <td id="t5">Duy</td>
-          <td id="t6">Trung</td>
-          <td id="t7">Kiên</td>
-        </tr>
-        <tr style="text-align: center">
-          <td id="d1">Hiệp</td>
-          <td id="d2">Huân</td>
-          <td id="d3">Lâm</td>
-          <td id="d4">Quang tí</td>
-          <td id="d5">Lương</td>
-          <td id="d6">Hiệp</td>
-          <td id="d7">Huân</td>
-        </tr>
-      </table>
-      <a href="index.html"><button id="back">⬅️ Tuần trước</button></a>
-      <a href="tuansau.html"><button id="next">Tuần sau ➡️</button></a>
-      <div>
-        <ul>
-          <li>Các việc phải làm:</li>
-        </ul>
-        <ol>
-          <li>Quét phòng</li>
-          <li>Lau phòng</li>
-          <li>Kỳ cọ nhà tắm, nhà vệ sinh, ngoài ban công</li>
-          <li>Đi lấy nước uống</li>
-          <li>....?</li>
-        </ol>
+    <div id="content_main">
+<div> <!--Tuần đã qua-->
+        <table border="1" id="content_table_back" hidden >
+          <tr class="thu">
+            <td style="font-size: 20px"></td>
+            <td>Thứ 2</td>
+            <td>Thứ 3</td>
+            <td>Thứ 4</td>
+            <td>Thứ 5</td>
+            <td>Thứ 6</td>
+            <td>Thứ 7</td>
+            <td>Chủ nhật</td>
+          </tr>
+          </tr>
+          <tr class="number">
+            <td rowspan="2" style="background: #838383; width: 150px; height: 100px;" >Tên</td>          
+            <td id="t1"></td>
+            <td id="t2"></td>
+            <td id="t3"></td>
+            <td id="t4"></td>
+            <td id="t5"></td>
+            <td id="t6"></td>
+            <td id="t7"></td>
+          </tr>        
+          <tr class="number">
+            <td id="d1"></td>
+            <td id="d2"></td>
+            <td id="d3"></td>
+            <td id="d4"></td>
+            <td id="d5"></td>
+            <td id="d6"></td>
+            <td id="d7"></td>
+        </table>
+</div>
+<div> <!--Tuần hiện tại-->
+        <table border="1" id="content_table" >
+          <tr class="thu">
+            <td style="font-size: 20px">06/10/2025 - 12/10/2025</td>
+            <td>Thứ 2</td>
+            <td>Thứ 3</td>
+            <td>Thứ 4</td>
+            <td>Thứ 5</td>
+            <td>Thứ 6</td>
+            <td>Thứ 7</td>
+            <td>Chủ nhật</td>
+          </tr>
+          </tr>
+          <tr class="number">
+            <td rowspan="2" style="background: #838383; width: 150px; height: 100px;" >Tên</td>          
+            <td id="t1">Hiệp</td>
+            <td id="t2">Huân</td>
+            <td id="t3">Lâm</td>
+            <td id="t4">Quang tí</td>
+            <td id="t5">Lương</td>
+            <td id="t6">Hiệp</td>
+            <td id="t7">Huân</td>
+          </tr>        
+          <tr class="number">
+            <td id="d1">Trung</td>
+            <td id="d2">Kiên</td>
+            <td id="d3">Văn</td>
+            <td id="d4">Quang to</td>
+            <td id="d5">Duy</td>
+            <td id="d6">Trung</td>
+            <td id="d7">Kiên</td>
+        </table>
+</div> 
+<div> <!--Tuần tiếp theo-->
+        <table border="1" id="content_table_next"  hidden>
+          <tr class="thu">
+            <td style="font-size: 20px">12/10/2025 - 19/10/2025</td>
+            <td>Thứ 2</td>
+            <td>Thứ 3</td>
+            <td>Thứ 4</td>
+            <td>Thứ 5</td>
+            <td>Thứ 6</td>
+            <td>Thứ 7</td>
+            <td>Chủ nhật</td>
+          </tr>
+          </tr>
+          <tr class="number">
+            <td rowspan="2" style="background: #838383; width: 150px; height: 100px;" >Tên</td>          
+          <td id="t1">Văn</td>
+          <td id="t2">Quang to</td>
+          <td id="t3">Duy</td>
+          <td id="t4">Trung</td>
+          <td id="t5">Kiên</td>
+          <td id="t6">Văn</td>
+          <td id="t7">Quang to</td>
+          </tr>        
+          <tr class="number">
+          <td id="d1">Lâm</td>
+          <td id="d2">Quang tí</td>
+          <td id="d3">Lương</td>
+          <td id="d4">Hiệp</td>
+          <td id="d5">Huân</td>
+          <td id="d6">Lâm</td>
+          <td id="d7">Quang tí</td>
+        </table>
+</div>
+<div style="position: absolute; left: 0; right: 0; top: 32%;"> <!--Nút bấm-->
+        <div>
+          <button id="back" onclick="back()">⬅️ Tuần trước</button>
+          <button id="next" onclick="next()">Tuần sau ➡️</button>
+          <button id="resset" onclick="resset()">Hiện tại</button>
+        </div>
+        <div> <!--Công việc-->
+          <ul>
+            <li>
+              Các việc phải làm:
+              <ol>
+                <li>Quét phòng</li>
+                <li>Lau phòng</li>
+                <li>Kỳ cọ nhà tắm, nhà vệ sinh, ngoài ban công</li>
+                <li>Đi lấy nước uống</li>
+                <li>....?</li>
+              </ol>
+            </li>
+          </ul>
+        </div>
+        <div> <!--Quy tắc-->
+          <ul>
+            <li>
+              Quy tắc trong phòng:
+              <ul>
+                <li>Chưa có</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
       </div>
-      <div>
-        <ul>
-          <li>Quy tắc trong phòng:</li>
-        </ul>
-        Chưa có
-      </div>
-    </div>
-    <p class="sp">
-      <i>Tất cả mọi thắc mắc hoặc có ý kiến hỏi 👉:</i>
-      <a href="https://zalo.me/0373329016"
-        ><button id="zaloanhvan"><i>Người đề ra lịch trực này</i></button></a
-      >
-      <a
-        href="https://zalo.me/0398063477
-"
-      >
-        <button id="zalohuan"><i>Người tạo</i></button>
-      </a>
-    </p>
+</div>
+      <p class="sp">
+        <i>Tất cả mọi thắc mắc hoặc có ý kiến hỏi 👉:</i>
+        <a href="https://zalo.me/0373329016"
+          ><button id="zaloanhvan"><i>Người đề ra lịch trực này</i></button></a
+        >
+        <a
+          href="https://zalo.me/0398063477
+  "
+        >
+          <button id="zalohuan"><i>Người tạo</i></button>
+        </a>
+      </p>
   </body>
 </html>
